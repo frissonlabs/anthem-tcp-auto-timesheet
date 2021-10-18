@@ -37,7 +37,6 @@ def fill_timesheet(webdriver, project_id) -> None:
 
 def submit_timesheet(webdriver) -> None:
 	webdriver.find_element_by_xpath("//button[@ng-click='submitTimesheet($event)']").click()
-	webdriver.click()
  
 def get_timesheet_date_range(webdriver) -> str:
 	try:
