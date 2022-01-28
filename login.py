@@ -38,9 +38,15 @@ def handle_login_page(webdriver: WebDriver, url, username, password, one_time_pa
 	)
 
 	submit_button.click()
+
+	print("Waiting...")
  
+	return wait_until_logged_in(webdriver)
+
+def wait_until_logged_in(webdriver: WebDriver) -> None:
+	wait = WebDriverWait(webdriver, 30)
+
 	return wait.until(
 		lambda x: x.find_element_by_xpath('//span[contains(text(),\'Time Sheet Portal\')]')
 	)
-
 		
