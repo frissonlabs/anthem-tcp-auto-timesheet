@@ -21,7 +21,7 @@ def fill_timesheet(webdriver, project_id) -> None:
 	actions.double_click(project).perform()
 
 	project_phase = wait.until(lambda x: x.find_element_by_xpath("//select[@id='u_project_phase']"))
-	Select(project_phase).select_by_value('string:initiate')
+	Select(project_phase).select_by_value('string:execute')
 
 	sleep(3)
 

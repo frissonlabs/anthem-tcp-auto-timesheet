@@ -25,7 +25,7 @@ from timesheet import fill_timesheet, submit_timesheet, get_timesheet_date_range
 
 try:
 	print("Logging in...")
-	# handle_login_page(driver, getenv("TCP_URL"), getenv("TCP_USERNAME"), getenv("TCP_PASSWORD"))
+	handle_login_page(driver, getenv("TCP_URL"), getenv("TCP_USERNAME"), getenv("TCP_PASSWORD"))
 	driver.get(getenv("TCP_URL"))
 	wait_until_logged_in(driver)
 
