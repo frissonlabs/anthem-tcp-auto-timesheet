@@ -13,7 +13,8 @@ days = ["monday", "tuesday", "wednesday", "thursday", "friday"]
 def fill_timesheet(webdriver, project_id) -> None:
 	wait = WebDriverWait(webdriver, 30)
 
-	add_project_button = webdriver.find_element_by_xpath('//a[contains(text(),\'' + project_id + '\')]/following-sibling::button[contains(text(), "Add to Time Sheet")]')
+	add_project_button = wait.until(lambda x: x.find_element_by_xpath('//a[contains(text(),\'' + project_id + '\')]//parent::div//following-sibling::button[contains(text(), "Add to Time Sheet")]'))
+	print("add", add_project_button)
 	add_project_button.click()
 
 	project = wait.until(lambda x: x.find_element_by_xpath("//div[@ng-dblclick='editRow($event, item);']"))
